@@ -1,4 +1,4 @@
 add
 .idea/
-HelloDocker.iml
 target/
+**/*.iml
