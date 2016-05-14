@@ -1,3 +1,7 @@
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +17,15 @@ public class SampleController {
     @ResponseBody
     String home() {
         return "Hello World!";
+    }
+
+    @RequestMapping ("/get")
+    @ResponseBody
+    String getStuff() {
+        MongoClient mongo = new MongoClient( "172.17.0.2" , 27017 );
+        MongoDatabase database = mongo.getDatabase("db");
+        MongoCollection<Document> stuff = database.getCollection("stuff");
+        return stuff.find().first().toJson();
     }
 
     public static void main(String[] args) throws Exception {
