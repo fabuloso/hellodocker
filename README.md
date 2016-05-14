@@ -5,9 +5,8 @@ An example of a java application running on Docker using spring boot
 ## Build project
 ```mvn package docker:build```
 
-## Run mongo
-```docker run --name some-mongo -d mongo```
+## Run environments
+```docker-compose up```
 
-## Run container with link to mongo
-```docker run -p 8080:8080 --link mongo -d fabuloso/helloworld:latest```
-
+### Note:
+you must insert data before in the collection 'db.stuff' in mongo
