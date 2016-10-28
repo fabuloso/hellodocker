@@ -1,6 +1,6 @@
 #HelloWorld with Docker using Spring boot
 
-An example of a java application running on Docker using spring boot
+This is an example of a java application based on Spring Boot, Mongo and Docker.
 
 ## Build project
 ```mvn package docker:build```
@@ -9,4 +9,4 @@ An example of a java application running on Docker using spring boot
 ```docker-compose up```
 
 ### Note:
-you must insert data before in the collection 'db.stuff' in mongo
+To run the application you need to populate the mongo collection `db.stuff`.
