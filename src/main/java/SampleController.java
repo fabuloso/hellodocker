@@ -45,7 +45,7 @@ public class SampleController {
                 parse("{\"data\": \"simpatica\"}")
             )
         );
-        return "inserita roba nel database";
+        return "inseriti dati significativi nel database";
     }
 
     @RequestMapping (value = "/get", produces = "application/json")
